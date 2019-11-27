@@ -1,0 +1,21 @@
+clc;
+clear;
+t=importdata('C:\Users\32609\Desktop\银杏黄11.27\data_processed\DATA_F.mat');
+for i=1:24
+    h=figure(i);
+    subplot(2,1,1);
+    x=t{i}(:,4);
+    y=t{i}(:,1);
+    plot(x,y,'.');
+    xlabel('时间');
+    ylabel('地址');
+    title(['test',num2str(i),'地址']);
+    subplot(2,1,2);
+    x=t{i}(:,4);
+    y=t{i}(:,2);
+    plot(x,y,'.');
+    xlabel('时间');
+    ylabel('大小');
+    title(['test',num2str(i),'大小']);
+    print(h,'-dpng',['C:\Users\32609\Desktop\银杏黄11.27\图片\test',num2str(i)]);
+end
